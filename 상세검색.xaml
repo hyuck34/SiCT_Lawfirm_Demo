@@ -1,6 +1,17 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="상세검색" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,827" sap2010:WorkflowViewState.IdRef="상세검색_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="상세검색" this:상세검색.in_search="전화 사기" this:상세검색.in_arrType="[{&quot;민사&quot;, &quot;특허&quot;}]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_search" Type="InArgument(x:String)" />
+    <x:Property Name="in_arrType" Type="InArgument(s:String[])" />
+    <x:Property Name="in_arrRange" Type="InArgument(s:String[])" />
+    <x:Property Name="in_strCourtName" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1234,3626</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>상세검색_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -32,10 +43,13 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
-    </sco:Collection>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="49">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -68,27 +82,457 @@
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="상세검색" sap:VirtualizedContainerService.HintSize="496,668" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="상세검색" sap:VirtualizedContainerService.HintSize="558,1460" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 판례 &gt; 상세검색 | 종합법률정보" sap:VirtualizedContainerService.HintSize="434,557" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 판례 &gt; 상세검색 | 종합법률정보" sap:VirtualizedContainerService.HintSize="496,1349" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="400,340" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="462,1132" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strText" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,225" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Version="V3" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '검색 폼 검색어를 입력하세요.'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="400,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Text="[in_search + &quot;[k(tab)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" DesignTimeRectangle="754, 363, 368, 20" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'검색어를 입력하세요.'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='input_alone' aaname='검색어 입력란' /&gt;" Guid="4d123b8d-852c-409a-b178-738c9897a460" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXQAAAAYCAYAAADqIgbGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJPSURBVHhe7dTRiiQxCIXhfv+XnsULQdyjMZWdrSb8HwjdmlPVM2A+PwCAK3ChA8AluNAB4BJc6ABwCS50ALiEvNA/n89fpVR9l+fx+yrb6X7PqnatsqofM7Ey1Zt6kvXMyXsBfK/xZj+5kPI8fu+yNvNSuuzKTjafVdnd5+WqrM51WdNlJllVAL7beEvVQq+WPM/j9yrbZVyVNTbraqo6m/snz9zJZqusmnuvyz6dAXjfeENtmVVVfBbPxFzsO9UzuT89d+Jf/JZcWdXrysXPipp7r8qunmkmZwC8Y7SdTy4An8Uz1WdXPS/3q3PGZquaqM7lvjrXvcNmsZ5aZdXce1V28nsmZwC8o91OW95ugacXg3+PfZXdfd5vm7x32lO6czaLlXUz4/14LvaUqh9NzgB4h9zOuPwddabrxdk0a6yfK1NnuppaZbp+VS5+jlQ/96qs8VmVmWSVbgbgfUcberLgKls9L/dvuVimf6/Z+R/4rMp0WWNzVQC+21dtaXVp5H53blU7Jud3nzmhnpl73Xt9VmW6rFHzVQbA+8ottQWelKLO5VKm/ercxE52crb7zauqqFnuVfnunH+usk7NVxkA7yu3dLLAJ0teZXNfnevea7Oudqi8qqeqrOrn3jQbv/vnKuvUfJUB8L5ySycLfLLkXdZmXspu/6nJ807e2WVtFit70vPP1bmdylQPwP9VbmFe4Kqe+q1s/G1V7VD5WCdO8k+ynjn93cpvPBPAHrYQAC7BhQ4Al+BCB4BLcKEDwCW40AHgElzoAHCFn58/3iUGVhXv8MMAAAAASUVORK5CYII=" InformativeScreenshot="d4ec05c32a043435e7266547d3ad68a3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="729, 347, 393, 50" FriendlyName="'검색 폼 검색어를 입력하세요.'" FullSelectorArgument="&lt;webctrl tag='FIELDSET' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FIELDSET' type='' class='' aaname='                                                                                                                                                                                &amp;#x9;&amp;#x9;&amp;#x9;             &amp;#x9;&amp;#x9;&amp;#x9;             &amp;#x9;&amp;#x9;&amp;#x9;                                                         ' check:text='검색 폼&amp;#xD;&amp;#xA;                        검색어를 입력하세요.&amp;#xD;&amp;#xA;                        &amp;#xD;&amp;#xA;                        &amp;#xD;&amp;#xA;        ' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Sequence DisplayName="항목범위 선택" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[IsNothing(in_arrRange)]" sap:VirtualizedContainerService.HintSize="576,1048" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'checked'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                      <uix:NCheck.Target>
+                        <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" DesignTimeRectangle="976, 513, 16, 16" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='checkbox1_1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='checkbox1_1' tag='INPUT' type='checkbox' class='' aaname='전체' /&gt;" Guid="be120b35-69d7-4626-bc29-ce4577915e17" InformativeScreenshot="6514b67f969de3bb1783055b7fee8652.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="997, 511, 50, 23" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl class='label_1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl class='label_1' tag='LABEL' type='' aaname='' check:innerText='전체' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAbCAYAAAA3d3w1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVFhH7ZMBCoAgDEW7TdRJo7tFR1qFfBrkpgahsz0QUrf2H9FAneJi1nAxa/xFbKd1GmkW13JWoOZ6LiH0rdvb/jKULyYF0ILhji/UmRbTaEIMwxGA7/k5J1aDdb+jCbF4iJxgcl9FMT5YDmhMLEckFQz3qOH7KmLaQH6XChbunwLS+TcI/5iGSbGcoVpNXCbsw3PDYhpdisV6mxG7wODUKg1WXawPXMwaLmYNF7NGp2JEB184TR45Wjj5AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheck.Target>
+                    </uix:NCheck>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="498,604" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,493" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_arrRange]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="currentRange" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="400,369" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="currentItem" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[currentRange.ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" DesignTimeRectangle="1073, 510, 75, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl class='label_2' tag='LABEL' /&gt;" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='LABEL' type='' aaname='{0}' check:innerText='{0}' /&gt;&quot;, strText)]" Guid="0aafd0c0-c4d2-4609-aee0-33c7d36d520b" ImageBase64="" InformativeScreenshot="15e67f241564deb94bfe322cdfe470b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                              </uix:NCheck.Target>
+                            </uix:NCheck>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <Sequence DisplayName="사건종류" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[isnothing( in_arrType)]" sap:VirtualizedContainerService.HintSize="576,1140" sap2010:WorkflowViewState.IdRef="If_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NCheck_5" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                      <uix:NCheck.Target>
+                        <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" DesignTimeRectangle="976, 545, 16, 16" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='checkbox3_1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='checkbox3_1' tag='INPUT' type='checkbox' class='' aaname='전체' /&gt;" Guid="2cf2fca7-50eb-4ba0-8101-6cb6dd4db306" InformativeScreenshot="8089e9393740c7c2f998c4d7a319dfcf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="997, 543, 50, 23" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl class='label_1' idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl class='label_1' type='' tag='LABEL' aaname='' check:innerText='전체' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAbCAYAAAA3d3w1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVFhH7ZMBCoAgDEW7TdRJo7tFR1qFfBrkpgahsz0QUrf2H9FAneJi1nAxa/xFbKd1GmkW13JWoOZ6LiH0rdvb/jKULyYF0ILhji/UmRbTaEIMwxGA7/k5J1aDdb+jCbF4iJxgcl9FMT5YDmhMLEckFQz3qOH7KmLaQH6XChbunwLS+TcI/5iGSbGcoVpNXCbsw3PDYhpdisV6mxG7wODUKg1WXawPXMwaLmYNF7NGp2JEB184TR45Wjj5AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheck.Target>
+                    </uix:NCheck>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="498,696" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="strText" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,585" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[in_arrType]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="currentType" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="400,461" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[currentType.ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[currentType]" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign x:Key="민사" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">민사</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign x:Key="형사" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">형사</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign x:Key="가사" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">가사</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign x:Key="행정" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">행정</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign x:Key="조세" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">조세</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign x:Key="특허" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[strText]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">특허</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Switch>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NCheck_7" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" DesignTimeRectangle="1073, 542, 75, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='민사' class='label_2' tag='LABEL' /&gt;" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='LABEL' type='' aaname='{0}' check:innerText='{0}' /&gt;&quot;, strText)]" Guid="69111025-9ac6-4303-9de1-21422c608e9f" InformativeScreenshot="cb8e4732ba0bf96b25dfc36be0695a80.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                              </uix:NCheck.Target>
+                            </uix:NCheck>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <Sequence DisplayName="법원명 선택" sap:VirtualizedContainerService.HintSize="400,167" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[string.IsNullOrEmpty(in_strCourtName)]" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="If_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NSelectItem DisplayName="Select Item '법원명'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="전체" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="50">
+                          <x:String>전체</x:String>
+                          <x:String>대법원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>고등법원전체</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>서울고등법원</x:String>
+                          <x:String>대전고등법원</x:String>
+                          <x:String>대구고등법원</x:String>
+                          <x:String>부산고등법원</x:String>
+                          <x:String>광주고등법원</x:String>
+                          <x:String>수원고등법원</x:String>
+                          <x:String>특허법원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>지방법원전체</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>서울중앙지방법원</x:String>
+                          <x:String>서울동부지방법원</x:String>
+                          <x:String>서울남부지방법원</x:String>
+                          <x:String>서울북부지방법원</x:String>
+                          <x:String>서울서부지방법원</x:String>
+                          <x:String>서울가정법원</x:String>
+                          <x:String>서울행정법원</x:String>
+                          <x:String>서울회생법원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>의정부지방법원</x:String>
+                          <x:String>고양지원</x:String>
+                          <x:String>남양주지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>인천지방법원</x:String>
+                          <x:String>부천지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>인천가정법원</x:String>
+                          <x:String>부천지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>수원지방법원</x:String>
+                          <x:String>성남지원</x:String>
+                          <x:String>여주지원</x:String>
+                          <x:String>평택지원</x:String>
+                          <x:String>안산지원</x:String>
+                          <x:String>안양지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>수원가정법원</x:String>
+                          <x:String>성남지원</x:String>
+                          <x:String>여주지원</x:String>
+                          <x:String>평택지원</x:String>
+                          <x:String>안산지원</x:String>
+                          <x:String>안양지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>춘천지방법원</x:String>
+                          <x:String>강릉지원</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do#//" DesignTimeRectangle="976, 482, 215, 23" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'전체'" FullSelectorArgument="&lt;webctrl id='bub_nm' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='bub_nm' tag='SELECT' type='' class='' aaname='법원명' /&gt;" Guid="2467fcee-89ec-4ebd-a4ee-a92ac15c5a8b" InformativeScreenshot="5e7fee014f5481c53f2c87c6955d4c47.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 &amp;gt; 전체 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="896, 485, 75, 16" ElementType="Text" FriendlyName="'법원명'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;label' idx='13' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='법원명' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAUCAYAAADMfWCyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD2SURBVFhH7ZQBCsIwDEW9jcyDDY8iu4pnEQ/iIeIqDZSSNp+m1hXz4MNIkyX5dDuR04ybZ8DNM+DmGXDzDCTmPWlbznRZbvtTSh4v5TF8nkurL9XtWu/0ill6/3F0Ng95B9onEGPrStfPWSqp/1gE81BJwyPGIDlMjPnN4zjaJxBj/2FegM9zafVSPMbm+Wy1pUp5KGifQIwd/+YFeLBcwkLF5evaHg31c5jXE82k1uUPax4yGDp8msfPqX6/vJXO5kmG5XlaDz6vqTbfOMB/niTNvBaQemuPfnzx5rUwtXkBHq4mZDlNpXdY+49DMM9BcfOaIXoDFC5YmezTz+gAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NSelectItem DisplayName="Select Item '법원명'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="서울고등법원" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="50">
+                          <x:String>전체</x:String>
+                          <x:String>대법원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>고등법원전체</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>서울고등법원</x:String>
+                          <x:String>대전고등법원</x:String>
+                          <x:String>대구고등법원</x:String>
+                          <x:String>부산고등법원</x:String>
+                          <x:String>광주고등법원</x:String>
+                          <x:String>수원고등법원</x:String>
+                          <x:String>특허법원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>지방법원전체</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>서울중앙지방법원</x:String>
+                          <x:String>서울동부지방법원</x:String>
+                          <x:String>서울남부지방법원</x:String>
+                          <x:String>서울북부지방법원</x:String>
+                          <x:String>서울서부지방법원</x:String>
+                          <x:String>서울가정법원</x:String>
+                          <x:String>서울행정법원</x:String>
+                          <x:String>서울회생법원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>의정부지방법원</x:String>
+                          <x:String>고양지원</x:String>
+                          <x:String>남양주지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>인천지방법원</x:String>
+                          <x:String>부천지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>인천가정법원</x:String>
+                          <x:String>부천지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>수원지방법원</x:String>
+                          <x:String>성남지원</x:String>
+                          <x:String>여주지원</x:String>
+                          <x:String>평택지원</x:String>
+                          <x:String>안산지원</x:String>
+                          <x:String>안양지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>수원가정법원</x:String>
+                          <x:String>성남지원</x:String>
+                          <x:String>여주지원</x:String>
+                          <x:String>평택지원</x:String>
+                          <x:String>안산지원</x:String>
+                          <x:String>안양지원</x:String>
+                          <x:String>----------------</x:String>
+                          <x:String>춘천지방법원</x:String>
+                          <x:String>강릉지원</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do#//" DesignTimeRectangle="976, 482, 215, 23" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'전체'" FullSelectorArgument="&lt;webctrl id='bub_nm' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='bub_nm' tag='SELECT' type='' class='' aaname='법원명' /&gt;" Guid="1466e30e-4d6b-4b72-9687-3e2e1f1a5588" InformativeScreenshot="5e7fee014f5481c53f2c87c6955d4c47.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 &amp;gt; 전체 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="896, 485, 75, 16" ElementType="Text" FriendlyName="'법원명'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;label' idx='13' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='법원명' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAUCAYAAADMfWCyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD2SURBVFhH7ZQBCsIwDEW9jcyDDY8iu4pnEQ/iIeIqDZSSNp+m1hXz4MNIkyX5dDuR04ybZ8DNM+DmGXDzDCTmPWlbznRZbvtTSh4v5TF8nkurL9XtWu/0ill6/3F0Ng95B9onEGPrStfPWSqp/1gE81BJwyPGIDlMjPnN4zjaJxBj/2FegM9zafVSPMbm+Wy1pUp5KGifQIwd/+YFeLBcwkLF5evaHg31c5jXE82k1uUPax4yGDp8msfPqX6/vJXO5kmG5XlaDz6vqTbfOMB/niTNvBaQemuPfnzx5rUwtXkBHq4mZDlNpXdY+49DMM9BcfOaIXoDFC5YmezTz+gAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <uix:NClick ClickType="Single" DisplayName="Click 'IMG srch_img'" sap:VirtualizedContainerService.HintSize="400,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" DesignTimeRectangle="1157, 347, 93, 50" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'IMG srch_img'" FullSelectorArgument="&lt;webctrl id='srch_img' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='srch_img' tag='IMG' type='' class='' aaname='검색' /&gt;" Guid="643b3cb9-eb34-4c49-a0b6-ba499d719e41" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAA2CAYAAADXjffsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA/+SURBVHhe7ZxnWJRXFsfzaRW7sZeoUWM2mmKN0UR3k+y6MZsYXRu26AZ7QQVsASWgWMFYUBMLIogo0jsMRekMQxNQOiKCSJeqqPnvue/MvPPOzIu6Zsh+2Jnn+T0Md+7cOXP+955z7lvmjaYnT6HimYCnaBSg3u91UI0r3t7W6wobHgvQeJ3vo9HW1nhtofYZhLxdZVszo1X+V7Nd+L+WvS/hDXHjXx3NDxTrI4cZKNb+cpQ2CnmdPi9D+D3k71d3LieCRpvwNeVz7vOFY2nQIID9/8agbdHQo81gYsiOGEy2ScTs0+lY43wHh4KLEJBRiaKqZjUBVGgLqulwvQj/BUwExsgfYzHaMh7j90rx6aEkfH0iFd9fyISVXyG80ypwv7oFj5qVq0YlglIITYfrRdARb++MwcR9Uiz89RZ2exXATfYQWWUNeNTSqiWCGHoRdMxQClnf2qfBLvQuonKrUVbbggYSg3O4QBClKEIBeBHG702kpZbIDaZHHZYTOLZH4y1iMCEmBGOURRwWn8uAT2oFyuooRLXIRWBOblI4W0wExhsP6h6DMf2wTEEyph/Ro2TqQRkm2SRhHE3U9y0TMJxyBBNEUwQmEMsf04/IcDa6FAWVTbzjeZgohJYIUDy+tEtRcTT1/54vFHxO/viLbQonyGc0QaeQKGOtE/EuzXy2WtSEIIbvIiFoMu/zL4C0sI4PTZo5ooGtFMVzvQivAYsWk/cncWK8Yx4nujI+o0rKmiqohII6ztF8TiDn1yvQi6AD/kor5GMbKbcqWO7QEoJWxF7/QuQ+bOSczkKPUgClCEwcvQg64JMDMozeE68VnhjTDifhWHgxSqlqEgqgD0c6huWNzw4lYxyFp7cpJwhFGEZ7is9IiKDMSnn5Sk5XohdBx/BCUBUlDE3crpvyxlLaZcdTflCGISF6EXSIXAgKTZbxakK8tT0G71G4OhVRwuWHNkX4wjZZBQ2m5/VgyfqTA0nc5k2zajI8mwG/9AoKReqHN3gR/kqbDDnJNJCe38sECkts8yYUYaR5LA4EFeHBoxZ+46YmwnSqa3n43bOe1+XTg0kYQyFIuBrYrnq5QyaCsyp5ERi8CJ/uT5RzgCFtN76k1bbgVBo2OmYSGdh4UZslp1MxwzYJU8meb0+kQpJVjZi8Wvx4PRuTrWIxxSaBH2+ufSrMXG7DxjsXxpcyMNMuiV5PxN9tZVh94RYcbpbA1j8fW5wyYXI5E65x92EfUgjDUymYsi+e+wyhfbpiKjHWKh4jdqmXrWwTdyTkrlwAzZzwCRnEQ1+yvZh7MgUHffMQSSVbW9j6ZGPesURMsorBHPsU1DU/5Wz82T8HH5iFYqJlNCYr7FzlcAtXou8hOb8GvwTlYrZdPPf6V7ZSWLrdRl5ZA4Jl93HEIxMn/LJRXtuMxOwKrPxFhvEWNzDJOlbLRl0xwToef7ZQD0nvUK5Y7Xyb2zdoiTCRZhgHGTXROq7dWGSfDIfwIpRUNKDkYT3ulT/iqKprVlgCuITlYMGRaHy4KxyzjiWhrqmVaz/sno6Raz3x4c5wTOBsjcMmmv03Mh6ihWZWUEIR5h2Jwoc7wjDjUBz2e95BdcMTRKXdx8/X03DW/zaePX+O3HvVWHkyDqNNgjBu900tG3XFBGLMnhitBD2LIkFMfq22CGP3RKmgmdRezDgYD+MLKTjtdxv2nmk46Z6Cs16puJlSjN9++41zkt0VKb7eE4xJuySYdyIJj5rlIux3TcaQFa54zzQYHyns3OSYjqjMcrQ+fYb0nAdYeCgSozYH4HObaOy7noXq+seITS/BaY9UOAZlcePn3K3CcttIjFjvjfdJUE0bdcmY3dEYvjOKnM+Qi8AKoNM3SrSrozG0NFXcbDc+oPHHmkdg3I4QfLDFF2M2emL1sRsIlRbh6bPnqKptxOWAdBy/Rob6ZsLlRgHN8mecjTZXZBi0zAXvbAnEaHO5nbvdb6Og7BGe0XsfVtVjyeEIDFvrhWk/RcL6WiYnQlVtE/Jo9hfdr5WLUFSBpYfCMHS1O97dFqploy55z/wmRmiIMGmfFJuv5miL8C7NCBUR7Ug4Rm0Pw0iTEAynGTvWNBDHfLJQWtmAuvoWXPZPQ1B0Dm7llXMh60F1E54//42zcd9lKfovdsLbm/wwikLO9L3RuBBRxJ00YavoSetTHKZVNG27H6aYh8LKNR1VJAJbJS1Um7dQP6UIiw+EYrCRG0ZuDRKxUXeMIobviFQT4f2fEjDvTLq2CCNoRqiQtC9mEozeIcE/D0ThgGcW0gprUFvfTGHjHmbv9ITNxVi4hd1GcHwBF6aYE9ljr3Mi+ho6Ysh6Hww3DcV2l1uQ5VejuaUVpQ/ruJUkzSqFxcUEzLKWwNI5BVVUk5dX1uN2fjny7lbIRSh8iEX7gzGAQtswY39xG3XEcGLYtnAMMlOJwJLzNCpjtUQYujVYQEi7MIoqm0/2RODrwzEwOivDhdA8lFQ2orquCdFpxTCzj0C/+efx6WZ3zN4TgAVWgdhwLAINzU84G62dEjDA8CLGmvhj/okERGSUo4ZWz+3CSpxylyGTHF3zqBnRlAP2OSXCykmKahIhKfMenHxkcA+5xYuwcF8Q+lJoG7zeV9RWXTLEJFRNBHaQbwytBi0RBhkHCAhsFz7aHgrjs1J4xRShoLSOCx/1jY9xQ1aEdbYh6D7rF7y50BF9V1xDPyN39P3BDRO3+aGm4TFno9WleLy9xBFLDoYjLb8S9U1PUFJeh5PXZeg/5xdsOyFBKiXn8qoGRKcW45BzPInSgsjEfBxyuAl71wRehAXWAei12Bn913iL2qpTNgdjoNlNXgRWLY2g3bSWCP02+AnwbxcGbPTHNqdkpOVVoJFm9x1yxgmXOMzYeg39aQX0WHARvUiAPqu90HetD/qSgyZSbK9plK8ES8c4DKB+/7AIRGxmGQpKqnHcNRHj/u2I7rPPYvAKF5ieiYKtUyx2kiDmpyO5pBxBIhx0iIL9VSkvwjwrf/QwvIQ+qzxFbdUpGwPVRBi8XX4BgfKiMV6EXmu9Ffi0Kx/tCMJiKg+tHGJheykG244G4/uffDDHwhdzrYIwzyYM8w9GYj6Vmgyj49Hwjy2AJD4Py20C0H3OWQxddR0zrCRYelCCacZu6D3vPLoZOqHH8msYbeyNccYemEohbYOtBCnZD+AhycDuU+GwPhdFwlUhPD4XMyn3dFvgiJ4/uIvaqTt80We9PwaaqkRgArDToloroQfNPhXe7YeRBwaSE7/c5Qe/mzkIislFUGweguILEZR4F0HSYgRL7yE4SY5EVoLk7HKk3CnFmqMSdJ5zDt2WuaL7CjcMpMT6MTnc0CYEW87FY+vFJGx1kHLPf6TkfM4nHdLM+5yALgFpuBJ0C2nZpfCJyMTftnmgC4nAxhG1U4f0WqcuwvBdMdwJIC0Ruq30EECzpL0gEbr++zommwfjcau86qmhxFxcWoPiMm1Y1cNCCHvsuZQAAwo7XZZeoTHc0ZUcOHt/GNzCs1FUVqegFkWlQmpof8D2CHKUK+Efu7zQicJfV1o9onbqDC/0XKsuwru74/CFnUh11JkcI8f9D+Hj3RJehIiEPNg53oTdpSjYOUUTMTznPZPQTDU+e1hQCOvwzRkYLLqMzivktn57IAJXI3NRSvuJ0qpGokGUCsoNjZTIuZxQUI7Zln4wmOuATsuuatmmS7oaeaLnugA1ET6ySsCyC1nywxZCETqRACrc251JFqG8CLvORKL3N8fR51+/ou/C82pM3HSNr44szkfjTzNPwsDQGQYkAhunJ1VRgyi8DTO6gqFLHTB00TkMXajNTJOruOChSMwkwncWPuhAoc1gyRUt23RJF1oJb26g6kggwpQDUlj65muLYEDOV+He7kwUiHCWnPPt1iuYtdMLsyz8yEEqVh8N50pR9lCK0FEhAjcW/e1Is7kDtXWgmd3hX+fJudp8vOEqTlxN5EWYZe6NP1Fo67jERcs2XdJ1FVV5m8OpOlLtE2b8nAy3pHLt8wn/SxGyaJMVGJWNwNh8BFKCDkwo4rmRWoInih1zWyIYLHeDwffXYLDUtU0mm/pwBwvVRPiufUXo/IMnelAoGkCrQCkCq4zYac6M+w3aIvzR4egDKlVTch8iI4/IfSCgXAT5a2uOBKPD1/ZcOOqkCEevyngzf+x1TsJdStbRsgJ8td0dHWZTOKIkL9ZfF3SjVdB7E+2WFSuAwa5nNXXL4fY+WuGoM9XLKjzanYHrvPDD4TAY7fOHkZUXjH7ylP+18haBve6BCUaO6Pjdr+hEs5d9SbFx22LkRh/Mt5HgqKsUe8/dwIS1Lug49wIlZlfR/rqAJeR+WyPURPjmRCocYkv5cwltiCA+oK7pSqVqb0qqvZe5oNeiS+hlSLtlQ8cXcJHbXHGrgEKP2JgvgpXGvVa6Y4DRNfRb6oRuCx3RaRGNRaFMrP/vpfsaP8oFErVcwDC5lk2hqF4lAsGLwJyiwvOPgWZzF3JCF1YmUtx+Gawf68/tEcTGexnkHPZ+bjxaAdxY1Cba93fQbaU3+lAYGmByQ00AdknkuehSVDYoQpGmCN1XeQnwbn+odFPSjRn+igjfJzruixD5rNca54X4oNeGIPTfGqm2CthBux0eefxV2qIiqG+1ffS8Bj3X+KLX+kASIELtgB27HvUvR2TwTatAxaPHbYvw5lofAb56XoPe3ApgAqhWACtJ2XGin8OKkSNyCaSaCL3X0yAcfnr+S/psCEBf4xD0N5GHIKEI7H5AVpIWVjWhrrlV7aps5ZXZvAj9NrLj3kqotNLzCgSiHzl/wJZwLglrVkJsT7DOORuyu49Q26QtgJYIA40DBQTpeRGbgzFgM1U/W8LI+Wz2U/zXEIBdAsl+BYBdAMzdFKLhfCVqIgzeEiwgRA9PqJytSiQYZBKOQaaR5Hht5w+lJDxhrxRrL2fD71YlKqgcFXO8EP4W2iGmoQokehS8ZRpGhMsxi8BgM4XjBZevCGFVEBNgm3suUorrRXOAmgi0W+bOJyhvJucU1fNqiIgwlKqgv9kl43h4Me5WN6OGcsCLwhCDCcGJoDmYnleH3QrFStCvjqXA2r8AgRR+ch40cNfO8jcIajheCB+OxAbX82LYD4yMp9p/ln0azK7nwjmhDGkl9ahi8V/hfL0IOmLErljutqcxlvHcr7pMPSjFzGOp+N4hC+ae+XCOL8OdskZUK8pPofNfJoASvQgvgd3y9LmtDHPP3MIGlzvYG1AIfwo5bOMl5lBNETghFKj9L3gPJ8Ljp8+5M1wtBPvLwdo42HMlz/GEh/oL2oWwcRjcb8UpUP4gk3L5tQVnGGdsK/fbQZqwdhXa/dRfV/bRRLyfpnNehHA8vl3QJkc1thBREZROU8KLwD/XRq0/1yYQolUuhKYI3Kk8xYe2heqLqDtX3Mni/dT7CFE54kUIHdQWov0FbXLUP1f4fiXy7/0U/wE5UI73Go3yBgAAAABJRU5ErkJggg==" InformativeScreenshot="be3152c2864796b5d9c79baaa5fe2513.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="법원판례_파일정리.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="법원판례_파일정리.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
