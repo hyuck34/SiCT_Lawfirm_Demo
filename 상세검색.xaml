@@ -1,0 +1,100 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="상세검색" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,827" sap2010:WorkflowViewState.IdRef="상세검색_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="상세검색" sap:VirtualizedContainerService.HintSize="496,668" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 판례 &gt; 상세검색 | 종합법률정보" sap:VirtualizedContainerService.HintSize="434,557" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="400,340" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,225" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Version="V3" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPnSURBVFhHrZd5SBRhGMbXTiiozA67Tbr+6DKysigsCIoOqPisdIswCk1Cuz26BDuJWNO+oCJsKiuKDqJ/gtI/wkqtLEwstJvSlC66zGx63pl3mNnRaq8Hfuw33zfv+zy7++3MrMNjKa7e4Dj4BC7wbMsSsg9IAudBOVjGKz5KcQWBKqAyZbziLiEngIugGmSAc2A8r/opxVVtCVDMs7qEHAKuAhXcBt15fgPoqY39luJaYwlwSJsTsi3YDn4CMr8BOmhrJCGzwCA+8lOKayKbF4HeaNwfFAMyJgqAaU4SMhdE8JGfUlyJHOC5Y+cBBY3rgWFeATrzmaaEPAmi+ej/KgreEwLGVkQnL/iZH7kehMAwGKSBGi3ArgNP0PQHMMzfg6Hcwl1CXgFz+ejfgnExUIk7vbKqYa6CuLgTyQWasWlufN9EIejLLXQJmQlczGtAm9M4nsRnNReMG40ANG5QxlOAOuWUqNTMc7Jr0eALMMzzQGsu1yVkKHgFOoERYAoYBwaCGuAe1iqYPrUEUN+lzdU+hXf5kxodx1wNjkXauzHMiZVcakrIOLAJzOcZXXqYfDCHZ5oLpgXWAOVRa0v4a1AHJu2i37bVnNjMpaaEzAHB4Bpoz7M0nwIiwWkQwrPugmmeNUBR192ff+RFNTUcHf16S2JsGQrtAc5yqSkhN/Irnb9EG5OETOXXS2CTNrYLppluAUDVvBV3v20Lr6hPH/S7TUxuHYqtAV5yqS4hu4AYEA2qwC2ebwWcPH8TPNPm7YJhvD1AYejOqi8ZYd+/ZoSp+5LmP0KxNQAxgMvJKAjsB7TZ6Lowj1dojfYF7SG6RyzlWXfBcDBIADPAMBqvH7G/dHNC7AMKQIxybruPBtYA67g88Lrebe/0vrNyPwbBqHBd1H0KUJc+uKnP4j3WT+I2nx54hc/MHWsYtYvJUcs2jHlohBjp3G7dlKO5JMAScrLFRG0tDqqXU6bepRDYF+qOVTHlmPuANYUrAiwhZ1sDGCxZnlj5MT28hoLUpg35lbxyWcnFlGl/v8L5LP2q1iwA0XFhdlNW4sJ7+DpeUBBwhKsCKHqOa8HcznBnZn1qgrO0f+zuAN33DQm5wm72H0pBG64OgPTrd0tG/yKDqwMg3wI0gr/f872SbwEIem4I4y5+yPcABN2MQrmTjzID0MNnA4+94THox918kJDx3IgeLujp1m7gCW9BFHf0UuZ1IBtE8NgXaGMmcFcvJORqbqAX6//57M09gR7Demg9PJb+jo17v/7HQshhgN6N3aAl6CZ1GIzSar2SkBe4iYH551LIrbY12pxvAF0Fz4BUQI/iHl4RHY4/zzCM2bYoeygAAAAASUVORK5CYII=" InformativeScreenshot="324e88c7fa435f87e6a9fb517b94f16b.jpg" Selector="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 | 종합법률정보' /&gt;" Url="https://glaw.scourt.go.kr/wsjo/panre/sjo060.do" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
