@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="법원판례정리" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,982" sap2010:WorkflowViewState.IdRef="법원판례정리_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="법원판례정리" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,3710" sap2010:WorkflowViewState.IdRef="법원판례정리_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -44,7 +44,7 @@
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -84,21 +84,30 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="법원판례정리" sap:VirtualizedContainerService.HintSize="688,917" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="법원판례정리" sap:VirtualizedContainerService.HintSize="944,3645" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: 판례 &gt; 상세검색 | 종합법률정보" sap:VirtualizedContainerService.HintSize="882,2622" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: 판례 &gt; 상세검색 | 종합법률정보" sap:VirtualizedContainerService.HintSize="882,3534" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="848,2405" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="848,3317" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
             </Sequence.Variables>
@@ -107,37 +116,38 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='NO' ReferenceIdx='0' Name='NO'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='요약정보' ReferenceIdx='1' Name='요약정보'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='요약정보 Url' ReferenceIdx='2' Name='요약정보 Url' IsDeleted='true'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='NO' attr='text' /&gt;&lt;column name='요약정보' attr='text' name2='요약정보 Url' attr2='href' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="786,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='NO' ReferenceIdx='0' Name='NO'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='요약정보' ReferenceIdx='1' Name='요약정보'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='요약정보 Url' ReferenceIdx='2' Name='요약정보 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='NO' attr='text' /&gt;&lt;column name='요약정보' attr='text' name2='요약정보 Url' attr2='href' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="786,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
               <uix:NExtractData.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="259, 494, 1586, 156" DesignTimeScaleFactor="1.25" FriendlyName="'판례 검색 결과 목록 NO 요약정보'" FullSelectorArgument="&lt;webctrl id='bmunStart2' tag='TABLE' /&gt;" Guid="968c99ee-0c4b-436d-9c77-a8ca8329126d" InformativeScreenshot="c9ae465a755fc1bd0a9732fad2505af2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='판례 &amp;gt; 상세검색 &amp;gt; 전체 | 종합법률정보' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="786,2093" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="786,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="법원판례.xlsx" />
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="786,2885" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
               <ueab:ExcelProcessScopeX.Body>
                 <ActivityAction x:TypeArguments="ui:IExcelProcess">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                   </ActivityAction.Argument>
-                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="752,2006" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="법원판례.xlsx">
+                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="752,2798" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="법원판례.xlsx">
                     <ueab:ExcelApplicationCard.Body>
                       <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="718,1737" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="718,2529" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="656,159" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[ExtractDataTable]" />
-                          <uix:NForEachUiElement DisplayName="For Each UiElement" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='dt' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="656,1427" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
+                          <uix:NForEachUiElement DisplayName="For Each UiElement" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='dt' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="656,2219" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b99b7085-dca0-4318-a8c2-95a202d5db2a" Version="V3">
                             <uix:NForEachUiElement.Body>
                               <ActivityAction x:TypeArguments="x:Int32">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="592,1162" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="592,1954" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="str_URL" />
                                   </Sequence.Variables>
@@ -155,13 +165,17 @@
                                       </uix:TargetAnchorable>
                                     </uix:NClick.Target>
                                   </uix:NClick>
-                                  <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: 대법원 2022도3265 &gt; 판례 &gt; 본문조회 | 종합법률정보" sap:VirtualizedContainerService.HintSize="530,870" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8f8eeeec-e804-4d9c-bf3e-0420a4abccc4" Version="V2">
+                                  <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: 대법원 2022도3265 &gt; 판례 &gt; 본문조회 | 종합법률정보" sap:VirtualizedContainerService.HintSize="530,1662" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8f8eeeec-e804-4d9c-bf3e-0420a4abccc4" Version="V2">
                                     <uix:NApplicationCard.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="496,1445" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Name="strTitle" />
+                                            <Variable x:TypeArguments="x:String" Name="strDetailText" />
+                                          </Sequence.Variables>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,6 +184,18 @@
                                           <uix:NGetUrl CurrentUrl="[str_URL]" DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="NGetUrl_1" Version="V3" />
                                           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[str_URL]" />
                                           <ueab:WriteCellX AutoIncrementRow="True" Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;$C2&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[str_URL]" />
+                                          <uix:NGetText DisplayName="Get Text '대법원 2018. 3.'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="8f8eeeec-e804-4d9c-bf3e-0420a4abccc4" TextString="[strTitle]" Version="V3">
+                                            <uix:NGetText.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo100.do?contId=2249353&amp;q=%EC%A0%84%ED%99%94%20%EC%82%AC%EA%B8%B0&amp;nq=&amp;w=panre&amp;section=panre_tot&amp;subw=&amp;subsection=&amp;subId=2&amp;csq=&amp;groups=6,7,5,9&amp;category=&amp;outmax=1&amp;msort=&amp;onlycount=&amp;sp=&amp;d1=&amp;d2=&amp;d3=&amp;d4=&amp;d5=&amp;pg=3&amp;p1=&amp;p2=&amp;p3=&amp;p4=&amp;p5=&amp;p6=&amp;p7=01,04&amp;p8=&amp;p9=&amp;p10=&amp;p11=&amp;p12=&amp;sysCd=WSJO&amp;tabGbnCd=&amp;saNo=&amp;joNo=&amp;lawNm=&amp;hanjaYn=N&amp;userSrchHistNo=&amp;poption=&amp;srch=&amp;range=&amp;daewbyn=N&amp;smpryn=N&amp;idgJyul=01&amp;newsimyn=Y&amp;trtyNm=&amp;tabId=&amp;save=Y&amp;bubNm=#Body" DesignTimeRectangle="372, 227, 1544, 119" DesignTimeScaleFactor="1.25" FriendlyName="'대법원 2018. 3.'" FullSelectorArgument="&lt;webctrl id='bmunStart' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='bmunStart' tag='DIV' type='' class='tit_area common' aaname='' /&gt;" Guid="93739f26-df74-4ff9-8929-0789aa9596a8" InformativeScreenshot="d8f40e9c0456bf3ed2b9eb3dbe48267b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='대법원 2017다257395 &amp;gt; 판례 &amp;gt; 본문조회 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                                            </uix:NGetText.Target>
+                                          </uix:NGetText>
+                                          <uix:NGetText DisplayName="Get Text '【판시사항】 전자문서에'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="8f8eeeec-e804-4d9c-bf3e-0420a4abccc4" TextString="[strDetailText]" Version="V3">
+                                            <uix:NGetText.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/panre/sjo100.do?contId=2249353&amp;q=%EC%A0%84%ED%99%94%20%EC%82%AC%EA%B8%B0&amp;nq=&amp;w=panre&amp;section=panre_tot&amp;subw=&amp;subsection=&amp;subId=2&amp;csq=&amp;groups=6,7,5,9&amp;category=&amp;outmax=1&amp;msort=&amp;onlycount=&amp;sp=&amp;d1=&amp;d2=&amp;d3=&amp;d4=&amp;d5=&amp;pg=3&amp;p1=&amp;p2=&amp;p3=&amp;p4=&amp;p5=&amp;p6=&amp;p7=01,04&amp;p8=&amp;p9=&amp;p10=&amp;p11=&amp;p12=&amp;sysCd=WSJO&amp;tabGbnCd=&amp;saNo=&amp;joNo=&amp;lawNm=&amp;hanjaYn=N&amp;userSrchHistNo=&amp;poption=&amp;srch=&amp;range=&amp;daewbyn=N&amp;smpryn=N&amp;idgJyul=01&amp;newsimyn=Y&amp;trtyNm=&amp;tabId=&amp;save=Y&amp;bubNm=#Body" DesignTimeRectangle="409, 346, 1461, 1719" DesignTimeScaleFactor="1.25" FriendlyName="'【판시사항】 전자문서에'" FullSelectorArgument="&lt;webctrl class='page' parentid='areaDetail' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='page' parentid='areaDetail' tag='DIV' type='' aaname='             ' /&gt;" Guid="55e6b5d8-1b82-4dd6-b3aa-d595f53ca4a9" InformativeScreenshot="8b4badec1b15035320c3e48a489d5af3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='대법원 2017다257395 &amp;gt; 판례 &amp;gt; 본문조회 | 종합법률정보' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                                            </uix:NGetText.Target>
+                                          </uix:NGetText>
+                                          <ueab:WriteCellX AutoIncrementRow="True" Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;$D2&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[strTitle]" />
+                                          <ueab:WriteCellX AutoIncrementRow="True" Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;$E2&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[strDetailText]" />
                                           <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - 탭 닫기" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
                                         </Sequence>
                                       </ActivityAction>
