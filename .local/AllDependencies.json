@@ -20763,9 +20763,9 @@
     "restore": {
       "projectUniqueName": "대법원자료조사",
       "projectName": "대법원자료조사",
-      "projectPath": "C:\\Users\\SICT\\Documents\\UiPath\\SiCT_Lawfirm_Demo\\.local",
+      "projectPath": "C:\\Users\\SICT\\Documents\\GitHub\\SiCT_Lawfirm_Demo\\.local",
       "packagesPath": "C:\\Users\\SICT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SICT\\Documents\\UiPath\\SiCT_Lawfirm_Demo\\.local"
+      "outputPath": "C:\\Users\\SICT\\Documents\\GitHub\\SiCT_Lawfirm_Demo\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

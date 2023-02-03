@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,929" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,819" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -99,7 +99,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="558,864" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
     </Sequence.Variables>
@@ -108,122 +108,5 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="496,753" sap2010:WorkflowViewState.IdRef="Sequence_4">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
-              <ueab:ExcelProcessScopeX.Body>
-                <ActivityAction x:TypeArguments="ui:IExcelProcess">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="592,980" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,869" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="법원주요판결.xlsx">
-                      <ueab:ExcelApplicationCard.Body>
-                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="496,600" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,489" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="91b61178-ff7d-4b29-a592-a3af10213560" Version="V2">
-                              <uix:NApplicationCard.Body>
-                                <ActivityAction x:TypeArguments="x:Object">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                  </ActivityAction.Argument>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="400,272" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Excel.Sheet(&quot;Sheet1&quot;).DataTableOutValue]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='번호' ReferenceName='번호' ReferenceIdx='0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='제목' ReferenceName='제목' ReferenceIdx='1'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='제목 Url' ReferenceName='제목 Url' ReferenceIdx='2'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='작성자' ReferenceName='작성자' ReferenceIdx='3'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' IsDeleted='true' Name='첨부' ReferenceName='첨부' ReferenceIdx='4'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' IsDeleted='true' Name='첨부 Src' ReferenceName='첨부 Src' ReferenceIdx='5'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' IsDeleted='true' Name='첨부 Alt Text' ReferenceName='첨부 Alt Text' ReferenceIdx='6'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' IsDeleted='true' Name='조회' ReferenceName='조회' ReferenceIdx='7'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='번호' attr='text' /&gt;&lt;column name='제목' attr='text' name2='제목 Url' attr2='href' /&gt;&lt;column name='작성자' attr='text' /&gt;&lt;column name='첨부' attr='text' name2='첨부 Src' attr2='src' name3='첨부 Alt Text' attr3='alt' /&gt;&lt;column name='조회' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="100" ScopeIdentifier="91b61178-ff7d-4b29-a592-a3af10213560" Version="V3">
-                                      <uix:NExtractData.Target>
-                                        <uix:TargetAnchorable DesignTimeRectangle="646, 333, 893, 544" DesignTimeScaleFactor="1" FriendlyName="'전국법원 주요판결'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="249d9fca-da79-41f9-a1f9-a4ae5c7a8f59" InformativeScreenshot="88e407a8d368ee5528916bbfd119c2c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전국법원 주요판결 &amp;gt; 목록' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
-                                      </uix:NExtractData.Target>
-                                    </uix:NExtractData>
-                                  </Sequence>
-                                </ActivityAction>
-                              </uix:NApplicationCard.Body>
-                              <uix:NApplicationCard.TargetApp>
-                                <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVDhPhZO9S8NQFMXff+DH6mBXHWoWnbMKYjtYBC1S6BZQMogOLtGlqEOztOAggSgiOPgnZNMxWweX7C6dunS53vM+eLGkLwd+JHm55+Tm3URUKo0zhhhfXnfGq0zIfDI548n1pUrjQgd42jhlEgZBka5yKI0T8RzDlDEkzUboYlFfa/cJk83fdpPtl9uMzST6IxhBJos64x4TMYU+NuQ6xGYCv9ctOnu9KJvt09RrIMRnsA9tfccG/OwH9DE4NGagWsemqT0w1zhXnUFszk3INGzS5snABBSywD4VXSBMnRux0WP8943H/CE4ou/LPVo5HpqQmpGVtN4aYc70dH4gQ3QndgK1smOjbj+gydWODJvdNOyOO1UKMDS7EW2d3tkNc6oioESoqxxyB4CerlwiFYBRVZkNjk5UwJCpC1F/6T+prws32wz+wEUTwrFemogQfytDDWxM0M0cAAAAAElFTkSuQmCC" InformativeScreenshot="1e5713935791b3c8ebd6e06b4f061db5.jpg" Selector="&lt;html app='chrome.exe' title='전국법원 주요판결 &amp;gt; 목록' /&gt;" Title="전국법원 주요판결 &gt; 목록" Url="https://www.scourt.go.kr/portal/dcboard/DcNewsListAction.work?gubun=44" />
-                              </uix:NApplicationCard.TargetApp>
-                            </uix:NApplicationCard>
-                          </Sequence>
-                        </ActivityAction>
-                      </ueab:ExcelApplicationCard.Body>
-                    </ueab:ExcelApplicationCard>
-                  </Sequence>
-                </ActivityAction>
-              </ueab:ExcelProcessScopeX.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ueab:ExcelProcessScopeX>
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 종합법률정보 &gt; 통합검색" sap:VirtualizedContainerService.HintSize="434,550" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="fe0642db-170f-4b07-bc36-26bf65a081d5" Version="V2">
-        <uix:NApplicationCard.Body>
-          <ActivityAction x:TypeArguments="x:Object">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="400,333" sap2010:WorkflowViewState.IdRef="Sequence_7">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '농기계 마력'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="fe0642db-170f-4b07-bc36-26bf65a081d5" Text="남편 사망[k(enter)]" Version="V3">
-                <uix:NTypeInto.Target>
-                  <uix:TargetAnchorable BrowserURL="https://glaw.scourt.go.kr/wsjo/intesrch/sjo022.do" DesignTimeRectangle="804, 291, 294, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'농기계 마력'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='input_alone' aaname='검색어 입력란' /&gt;" Guid="ebb04df8-cc18-4cad-a246-8e32940d7d9c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASoAAAAUCAYAAAA6PXBGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFLSURBVHhe7dTBCsQwCEXR/v9Pd3AhiDxNMqWDA/eAtInGrMx1A8BwPFQAxuOhAjAeDxWA8cqH6rr23zCrVeHiv1nVxT0lno3h4r/JdSoPYK5yQp8Obzzf9VJ1q7tVXvWpxHs8AMxVTmgcYhUrsaarjz29rqs3Kh/3ct7WOaK8BjDL9oSeDnOs786qutVdKq/6uKqf7XsAmGt7Qk+HOdZ3Z1Xd6i6VV33cN/0AzCEn1AZ3Jyo5t1vr/129UfncxyOvY7j4D2CeVyY0D371EPi+fT183VH5uLc6D+C/tBNtA6+io/LVmbzv66d3VPkuAMxVTmg3vFXuZL/bq/q4Vb/V+ey0HsBvlRPaDW/O2fq0XvH9rpexvAoX/3ec1gP4rXZC4yMQ49TuGa/75o7o9PzT+wC8iwkFMB4PFYDxeKgAjMdDBWA8HioAw933B8P6n1J5hL61AAAAAElFTkSuQmCC" InformativeScreenshot="bb91027fdde4270a9f2099697dd4e26f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='종합법률정보 &amp;gt; 통합검색' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                        <uix:Target DesignTimeRectangle="784, 278, 314, 29" ElementType="Container" FriendlyName="'농기계 마력'" FullSelectorArgument="&lt;webctrl tag='FORM' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORM' type='' class='' aaname='                                                   ' check:text='농기계 마력' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NTypeInto.Target>
-              </uix:NTypeInto>
-            </Sequence>
-          </ActivityAction>
-        </uix:NApplicationCard.Body>
-        <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPnSURBVFhHrZd5SBRhGMbXTiiozA67Tbr+6DKysigsCIoOqPisdIswCk1Cuz26BDuJWNO+oCJsKiuKDqJ/gtI/wkqtLEwstJvSlC66zGx63pl3mNnRaq8Hfuw33zfv+zy7++3MrMNjKa7e4Dj4BC7wbMsSsg9IAudBOVjGKz5KcQWBKqAyZbziLiEngIugGmSAc2A8r/opxVVtCVDMs7qEHAKuAhXcBt15fgPoqY39luJaYwlwSJsTsi3YDn4CMr8BOmhrJCGzwCA+8lOKayKbF4HeaNwfFAMyJgqAaU4SMhdE8JGfUlyJHOC5Y+cBBY3rgWFeATrzmaaEPAmi+ej/KgreEwLGVkQnL/iZH7kehMAwGKSBGi3ArgNP0PQHMMzfg6Hcwl1CXgFz+ejfgnExUIk7vbKqYa6CuLgTyQWasWlufN9EIejLLXQJmQlczGtAm9M4nsRnNReMG40ANG5QxlOAOuWUqNTMc7Jr0eALMMzzQGsu1yVkKHgFOoERYAoYBwaCGuAe1iqYPrUEUN+lzdU+hXf5kxodx1wNjkXauzHMiZVcakrIOLAJzOcZXXqYfDCHZ5oLpgXWAOVRa0v4a1AHJu2i37bVnNjMpaaEzAHB4Bpoz7M0nwIiwWkQwrPugmmeNUBR192ff+RFNTUcHf16S2JsGQrtAc5yqSkhN/Irnb9EG5OETOXXS2CTNrYLppluAUDVvBV3v20Lr6hPH/S7TUxuHYqtAV5yqS4hu4AYEA2qwC2ebwWcPH8TPNPm7YJhvD1AYejOqi8ZYd+/ZoSp+5LmP0KxNQAxgMvJKAjsB7TZ6Lowj1dojfYF7SG6RyzlWXfBcDBIADPAMBqvH7G/dHNC7AMKQIxybruPBtYA67g88Lrebe/0vrNyPwbBqHBd1H0KUJc+uKnP4j3WT+I2nx54hc/MHWsYtYvJUcs2jHlohBjp3G7dlKO5JMAScrLFRG0tDqqXU6bepRDYF+qOVTHlmPuANYUrAiwhZ1sDGCxZnlj5MT28hoLUpg35lbxyWcnFlGl/v8L5LP2q1iwA0XFhdlNW4sJ7+DpeUBBwhKsCKHqOa8HcznBnZn1qgrO0f+zuAN33DQm5wm72H0pBG64OgPTrd0tG/yKDqwMg3wI0gr/f872SbwEIem4I4y5+yPcABN2MQrmTjzID0MNnA4+94THox918kJDx3IgeLujp1m7gCW9BFHf0UuZ1IBtE8NgXaGMmcFcvJORqbqAX6//57M09gR7Demg9PJb+jo17v/7HQshhgN6N3aAl6CZ1GIzSar2SkBe4iYH551LIrbY12pxvAF0Fz4BUQI/iHl4RHY4/zzCM2bYoeygAAAAASUVORK5CYII=" InformativeScreenshot="e5fbc12cfb1c2cac0d818f2f2ea9b0ae.jpg" Selector="&lt;html app='chrome.exe' title='종합법률정보 &amp;gt; 통합검색' /&gt;" Url="https://glaw.scourt.go.kr/wsjo/intesrch/sjo022.do" />
-        </uix:NApplicationCard.TargetApp>
-      </uix:NApplicationCard>
-    </Sequence>
   </Sequence>
 </Activity>

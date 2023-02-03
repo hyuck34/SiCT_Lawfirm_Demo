@@ -1,7 +1,7 @@
 {
   "name": "대법원자료조사",
   "description": "법원 주요 판결 조사",
-  "main": "Main.xaml",
+  "main": "상세검색.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.16.1]",
     "UiPath.Mail.Activities": "[1.18.2]",
@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.4.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.5",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -49,6 +49,18 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "68f22b5c-7f2f-42f9-b3f6-443b9f1cc709",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "단순검색.xaml",
+      "uniqueId": "9ff55391-ede1-4938-9ef7-aa387835b1a8",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "상세검색.xaml",
+      "uniqueId": "b026d674-ee7d-44a1-8661-3a830027a6d3",
       "input": [],
       "output": []
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mH4B4KWpooqVWcvCbtVw94a9rPy+/pFvU8Lm8QO9rE6r/lLXUJ900PaESYdas0+gn+Pi3s8VjAbW35dYpsqI4g==",
+  "dgSpecHash": "kQXHRf4EkclY4ymsf7tTb5zqFsWAC7bPKklfffpMJgsYnKO7p/To1cZSHtjJD3kQTPiuP7P78PSWBTK/ylNqWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SICT\\Documents\\UiPath\\SiCT_Lawfirm_Demo\\.local\\",
+  "projectFilePath": "C:\\Users\\SICT\\Documents\\GitHub\\SiCT_Lawfirm_Demo\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\SICT\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\SICT\\.nuget\\packages\\azure.core\\1.18.0\\azure.core.1.18.0.nupkg.sha512",
