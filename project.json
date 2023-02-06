@@ -1,6 +1,6 @@
 {
-  "name": "대법원자료조사",
-  "description": "법원 주요 판결 조사",
+  "name": "법원자료조사",
+  "description": "법원 주요 판례 조회 데모\r\n- 단순검색\r\n- 상세검색\r\nApps 연동 가능",
   "main": "상세검색.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.16.1]",
